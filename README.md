@@ -9,5 +9,5 @@ https://duzhenrong.users.earthengine.app/view/globalplantationyear
 
 ## GeoTIFF results download
 The dataset can be download at **.
-year_1km.jpg![image](https://user-images.githubusercontent.com/24910927/119088299-0a164300-ba3b-11eb-84ea-e3a14c31c6a6.png)
+![image](https://user-images.githubusercontent.com/24910927/119088299-0a164300-ba3b-11eb-84ea-e3a14c31c6a6.png)
 
