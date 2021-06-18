@@ -56,9 +56,6 @@ for(var year=startYear;year<=2020;year++)
                 .filterDate(year+'-06-01', year+'-09-01')
                 .map(maskL8sr).map(getL8ND);
   var lan_col=l4_col.merge(l5_col).merge(l7_col).merge(l8_col);
-  if (year>=2013){
-    lan_col=lan_col.filterDate(year+'-06-01', year+'-09-01');
-  }
   var nbrYear=lan_col.select('NBR').max();
   var nbrOrg=nbrYear;
   nbrYear=nbrYear.expression('nbr>=-1&&nbr<=1?nbr:-2',{'nbr':nbrYear})
