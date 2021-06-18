@@ -180,7 +180,7 @@ var gainYear=firstgainYear
 //----------secondToTenth
 for (var i=2;i<=10;i++)
 {
-  var tempDistImg = distImgSorted.updateMask(vertexSum.gt(i)).arraySlice(1, 1, 2).unmask(ee.Image(ee.Array([[0],[0],[0]])));
+  var tempDistImg = distImgSorted.updateMask(vertexSum.gt(i)).arraySlice(1, i-1, i).unmask(ee.Image(ee.Array([[0],[0],[0]])));
   var distImg = ee.Image.cat(tempDistImg.arraySlice(0,0,1).arrayProject([1]).arrayFlatten([['preYear']]), 
                                   tempDistImg.arraySlice(0,2,3).arrayProject([1]).arrayFlatten([['mag']]),
                                   tempDistImg.arraySlice(0,3,4).arrayProject([1]).arrayFlatten([['dur']]));
