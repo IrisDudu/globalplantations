@@ -157,7 +157,7 @@ for(var year=startYear;year<=2020;year++){
     'py':preYear
   });
 }
-sdptGainYear=sdptGainYear.clip(study_area);
+sdptGainYear=sdptGainYear.clip(study_area).updateMask(planted.gt(0));
 
 //--------------first
 var tempDistImg = distImgSorted.arraySlice(1, 0, 1).unmask(ee.Image(ee.Array([[0],[0],[0]])));
@@ -199,7 +199,7 @@ for (var i=2;i<=10;i++)
   gainYear=gainYear.expression('g>0?g:(gy>0?gy:g)',{
     'g':gainYear,
     'gy':GainYear
-  })
+  }).updateMask(planted.gt(0))
 }
 //----------mosaic----------//
 var gainYearFinal=ee.Image(0).expression('sdpt>0&&(gy==0)?sdpt:gy',{
